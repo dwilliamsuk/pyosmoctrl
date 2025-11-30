@@ -1,0 +1,32 @@
+name: Build Wheel for Release
+on:
+  push:
+    paths:
+      - 'src/*'
+      - 'pyproject.toml'
+    branches:
+      - main
+
+jobs:
+  build_wheel:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: 3.11
+      - name: Build Wheel
+        run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          python -m pip install --user --upgrade build
+          python -m build
+      - name: Create New Release and Upload Wheel
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION=$(python -c 'import tomllib; print("v"+tomllib.load(open("pyproject.toml", "rb"))["project"]["version"])')
+          gh release create $VERSION ./dist/*
