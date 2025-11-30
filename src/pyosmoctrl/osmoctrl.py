@@ -286,9 +286,9 @@ class CtrlInterface:
 
     @property
     def TRAPS(self):
-        """Pop the list of TRAPS recieved.
+        """Pop the list of TRAPS received.
         
-        :return: A list containing all TRAPS recieved since last check.
+        :return: A list containing all TRAPS received since last check.
         :rtype: list
         """
 
@@ -296,5 +296,5 @@ class CtrlInterface:
 
     @TRAPS.setter
     def TRAPS(self, val):
-        """Append to the list of TRAPS recieved."""
+        """Append to the list of TRAPS received."""
         self._TRAPS.append(val)
