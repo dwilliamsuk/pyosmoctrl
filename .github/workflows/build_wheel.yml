@@ -22,7 +22,7 @@ jobs:
         run: |
           python -m venv .venv
           source .venv/bin/activate
-          python -m pip install --user --upgrade build
+          python -m pip install --upgrade build
           python -m build
       - name: Create New Release and Upload Wheel
         env:
