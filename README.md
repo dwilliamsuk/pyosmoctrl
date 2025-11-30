@@ -10,7 +10,7 @@ and to allow me to quickly iterate and make further tooling using the CTRL inter
 ## Wiki
 For further documentation and resources, visit [the wiki.](https://github.com/dwilliamsuk/pyosmoctrl/wiki)
 
-### Acknowledgements
+## Acknowledgements
  - [osmocom/python_osmo-python-tests](https://github.com/osmocom/python_osmo-python-tests/)
  - [OsmoHLR User Manual (Section 11.1)](https://downloads.osmocom.org/docs/osmo-hlr/master/osmohlr-usermanual.pdf)
 > Both were valuable resources that helped with the identification and understanding of the Osmocom Control Interface protocol.
